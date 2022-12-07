@@ -1,0 +1,44 @@
+plugin:
+  name: custom-data-type-cerlthesaurus
+  version: 2
+  url: https://github.com/programmfabrik/easydb-custom-data-type-cerlthesaurus
+  displayname:
+    de-DE: CERL-Thesaurus-Verknüpfung
+    en-US: CERL-thesaurus-Referencing
+  info:
+    de-DE: Stellt Verknüpfungen mit de, CERL-Thesaurus her.
+    en-US: Use for references to entities of the CERL-thesaurus.
+  server:
+    api-version:
+      require: 1
+  webfrontend:
+    url: custom-data-type-cerlthesaurus.js
+    l10n: l10n/
+    css: custom-data-type-cerlthesaurus.css
+custom_types:
+  cerlthesaurus:
+    mapping:
+      conceptName:
+        type: text
+      conceptURI:
+        type: text
+      conceptAncestors:
+        type: text
+    config:
+      mask:
+        - name: allow_placename
+          parameters:
+            value:
+              type: bool
+        - name: allow_imprintname
+          parameters:
+            value:
+              type: bool
+        - name: allow_personalname
+          parameters:
+            value:
+              type: bool
+        - name: allow_corporatename
+          parameters:
+            value:
+              type: bool

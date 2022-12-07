@@ -16,7 +16,10 @@ The Plugins uses <https://ws.gbv.de/suggest/cerl_thesaurus/> for the autocomplet
 In `manifest.yml` you can configure:
 
 * `mask-options`:
-    * allowed-types (one or multiple of "placename, imprintname,  personalname, corporatename". Splitted by commata)
+    * allow_placename
+    * allow_imprintname
+    * allow_personalname
+    * allow_corporatename
 
 ## saved data
 
