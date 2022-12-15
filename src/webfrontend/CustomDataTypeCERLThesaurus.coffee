@@ -374,25 +374,25 @@ class CustomDataTypeCERLThesaurus extends CustomDataTypeWithCommons
     # offer types as dropdown (at least one must be configured)
     typesOptions = []
 
-    if that.getCustomMaskSettings()?.allow_corporatename.value == true
+    if that.getCustomMaskSettings()?.allow_corporatename?.value == true
       newType = (
               value: 'corporatename'
               text: $$('custom.data.type.cerl.thesaurus.config.parameter.mask.allow_corporatename.value.label')
             )
       typesOptions.push newType
-    if that.getCustomMaskSettings()?.allow_imprintname.value == true
+    if that.getCustomMaskSettings()?.allow_imprintname?.value == true
       newType = (
               value: 'imprintname'
               text: $$('custom.data.type.cerl.thesaurus.config.parameter.mask.allow_imprintname.value.label')
             )
       typesOptions.push newType
-    if that.getCustomMaskSettings()?.allow_personalname.value == true
+    if that.getCustomMaskSettings()?.allow_personalname?.value == true
       newType = (
               value: 'personalname'
               text: $$('custom.data.type.cerl.thesaurus.config.parameter.mask.allow_personalname.value.label')
             )
       typesOptions.push newType
-    if that.getCustomMaskSettings()?.allow_placename.value == true
+    if that.getCustomMaskSettings()?.allow_placename?.value == true
       newType = (
               value: 'placename'
               text: $$('custom.data.type.cerl.thesaurus.config.parameter.mask.allow_placename.value.label')
