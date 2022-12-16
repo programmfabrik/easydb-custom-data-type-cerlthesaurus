@@ -226,11 +226,11 @@ class CustomDataTypeCERLThesaurus extends CustomDataTypeWithCommons
         cerlthesaurus_countSuggestions = 50
 
         # init searchtype
-        if that.getCustomMaskSettings()?.allow_corporatename.value == true
+        if that.getCustomMaskSettings()?.allow_corporatename?.value == true
           cerlthesaurus_type = 'corporatename'
-        else if that.getCustomMaskSettings()?.allow_imprintname.value == true
+        else if that.getCustomMaskSettings()?.allow_imprintname?.value == true
           cerlthesaurus_type = 'imprintname'
-        else if that.getCustomMaskSettings()?.allow_placename.value == true
+        else if that.getCustomMaskSettings()?.allow_placename?.value == true
           cerlthesaurus_type = 'placename'
         else
           cerlthesaurus_type = 'personalname'
