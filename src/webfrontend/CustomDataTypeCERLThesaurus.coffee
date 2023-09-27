@@ -82,7 +82,7 @@ class CustomDataTypeCERLThesaurus extends CustomDataTypeWithCommons
           givenURI = data[@name()].conceptURI
           givenURIParts = givenURI.split('/')
           givencerlthesaurusID = givenURIParts.pop()
-          uri = 'http://thesaurus.cerl.org/record/' + givencerlthesaurusID
+          uri = 'https://data.cerl.org/thesaurus/' + givencerlthesaurusID
 
           filter.search[1].string = uri
       else
@@ -170,7 +170,7 @@ class CustomDataTypeCERLThesaurus extends CustomDataTypeWithCommons
     searchsuggest_xhr = { "xhr" : undefined }
 
     # set default value for count of suggestions
-    cdata.countOfSuggestions = 50
+    cdata.countOfSuggestions = 10
     cdata_form = new CUI.Form
       class: 'cdtFormWithPadding'
       data: cdata
@@ -223,7 +223,7 @@ class CustomDataTypeCERLThesaurus extends CustomDataTypeWithCommons
     setTimeout ( ->
 
         cerlthesaurus_searchterm = searchstring
-        cerlthesaurus_countSuggestions = 50
+        cerlthesaurus_countSuggestions = 10
 
         # init searchtype
         if that.getCustomMaskSettings()?.allow_corporatename.value == true
@@ -265,12 +265,12 @@ class CustomDataTypeCERLThesaurus extends CustomDataTypeWithCommons
               do(key) ->
                 item =
                   text: suggestion.displayName
-                  value: 'http://thesaurus.cerl.org/record/' + suggestion.cerlID
+                  value: 'https://data.cerl.org/thesaurus/' + suggestion.cerlID
                   tooltip:
                     markdown: true
                     placement: "e"
                     content: (tooltip) ->
-                      that.__getAdditionalTooltipInfo('http://thesaurus.cerl.org/record/' + data[key].cerlID, tooltip, extendedInfo_xhr)
+                      that.__getAdditionalTooltipInfo('https://data.cerl.org/thesaurus/' + data[key].cerlID, tooltip, extendedInfo_xhr)
                       new CUI.Label(icon: "spinner", text: "lade Informationen")
                 menu_items.push item
 
@@ -288,7 +288,7 @@ class CustomDataTypeCERLThesaurus extends CustomDataTypeWithCommons
 
                   # extract cerlthesaurus-id from URI
                   cerlthesaurusID = cdata.conceptURI
-                  cerlthesaurusID = cerlthesaurusID.replace('http://thesaurus.cerl.org/record/', '')
+                  cerlthesaurusID = cerlthesaurusID.replace('https://data.cerl.org/thesaurus/', '')
                   # build url for cerlthesaurus-api
                   requestUrl = 'https://ws.gbv.de/suggest/cerl_thesaurus/?searchstring=' + cerlthesaurusID + '&type=placename&count=1'
                   dataEntry_xhr = new (CUI.XHR)(url: requestUrl)

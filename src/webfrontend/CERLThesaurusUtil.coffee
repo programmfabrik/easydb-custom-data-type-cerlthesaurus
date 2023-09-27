@@ -10,7 +10,7 @@ class ez5.CERLThesaurusUtil
   @getConceptURIFromObject: (object) ->
     conceptURI = ''
     if object?.cerlID
-      conceptURI = 'http://thesaurus.cerl.org/record/' + object.cerlID
+      conceptURI = 'https://data.cerl.org/thesaurus/' + object.cerlID
     return conceptURI
 
 
